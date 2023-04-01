@@ -1,5 +1,5 @@
 import React from "react";
-import { Todo } from "./types";
+import { Todo } from "../types";
 
 type TodoContextType = {
   toggle: (id: string) => void;

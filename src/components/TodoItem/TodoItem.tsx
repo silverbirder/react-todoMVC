@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import type { Todo } from "./types";
-import { TodoContext } from "./context";
+import type { Todo } from "../../types";
+import { TodoContext } from "../context";
 
 type Props = {
   todo: Todo;

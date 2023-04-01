@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import type { Todo } from "./types";
-import { TodoContext } from "./context";
-import { TodoInput } from "./TodoInput";
-import { TodoList } from "./TodoList";
+import type { Todo } from "../../types";
+import { TodoContext } from "../context";
+import { TodoInput, TodoList } from "..";
 
-const App = () => {
+export const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (todo: Todo) => {
@@ -38,5 +37,3 @@ const App = () => {
     </TodoContext.Provider>
   );
 };
-
-export default App;

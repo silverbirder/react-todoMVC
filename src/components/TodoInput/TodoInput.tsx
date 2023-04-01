@@ -1,6 +1,6 @@
 import React, { useState, KeyboardEvent, useContext } from "react";
 import { v4 } from "uuid";
-import { TodoContext } from "./context";
+import { TodoContext } from "../context";
 
 export const TodoInput = () => {
   const [title, setTitle] = useState("");
