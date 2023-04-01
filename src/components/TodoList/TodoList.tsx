@@ -1,6 +1,6 @@
 import React from "react";
 import type { Todo } from "../../types";
-import { TodoItem } from "..";
+import { TodoItem } from "../TodoItem";
 
 type Props = {
   todos: Todo[];

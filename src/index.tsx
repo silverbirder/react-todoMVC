@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "todomvc-common/base.css";
 import "todomvc-app-css/index.css";
 
 import { App } from "./components";
