@@ -67,6 +67,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/uuid": "^9.0.1",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "gremlins.js": "^2.2.0",
     "prop-types": "^15.8.1",
     "webpack": "^5.77.0"
   }

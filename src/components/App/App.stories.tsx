@@ -1,5 +1,6 @@
 import { ComponentStoryObj, ComponentMeta } from "@storybook/react";
 import { App } from ".";
+import * as gremlins from "gremlins.js";
 
 type Component = typeof App;
 type Meta = ComponentMeta<Component>;
@@ -10,4 +11,16 @@ const meta: Meta = {
 };
 export default meta;
 
-export const Default: Story = {};
+export const Ideal: Story = {};
+export const Monkey: Story = {
+  decorators: [
+    (Story) => {
+      const horde = gremlins.createHorde();
+      horde.unleash();
+      setTimeout(() => {
+        horde.stop();
+      }, 1000);
+      return <Story />;
+    },
+  ],
+};
