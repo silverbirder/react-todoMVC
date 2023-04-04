@@ -15,11 +15,15 @@ export const Ideal: Story = {};
 export const Monkey: Story = {
   decorators: [
     (Story) => {
-      const horde = gremlins.createHorde();
+      const randomizer = new gremlins.Chance(new gremlins.Chance().random());
+      const horde = gremlins.createHorde({
+        randomizer,
+      });
+      console.log("random seed", randomizer.seed);
       horde.unleash();
       setTimeout(() => {
         horde.stop();
-      }, 1000);
+      }, 5000);
       return <Story />;
     },
   ],
