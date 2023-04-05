@@ -24,6 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:mutate": "stryker run",
+    "test:lighthouse": "lighthouse --output-path ./lighthouse-report.html https://silverbirder-react-todo-mvc.vercel.app",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -74,6 +75,7 @@
     "@types/uuid": "^9.0.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "gremlins.js": "^2.2.0",
+    "lighthouse": "^10.1.0",
     "prop-types": "^15.8.1",
     "stryker-cli": "^1.0.2",
     "webpack": "^5.77.0"
