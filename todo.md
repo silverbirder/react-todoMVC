@@ -8,6 +8,11 @@
   - accessibility testing
   - cross browser testing
   - dark mode testing
+  - i18n testing
+- アプローチ
+  - パラメタライズドテスト
+  - プロパティベースドテスト
+  - スナップショットテスト
 - [ ] stateful testing (mswjs/data)
 
 ## Chaos Engineering Test
