@@ -1,6 +1,6 @@
 
 - [ ] memlab
-- [ ] browser-perf
+- [ ] browser-perf or artillery + playwright
 - [ ] screenplay cucumber
 - [ ] cross browser testing playwright
 - [ ] UI/UX testing with chromatic
