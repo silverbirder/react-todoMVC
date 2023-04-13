@@ -1,6 +1,6 @@
 import { ComponentStoryObj, ComponentMeta } from "@storybook/react";
 import { App } from ".";
-import * as gremlins from "gremlins.js";
+import chaosFrontendToolkit from "chaos-frontend-toolkit";
 
 type Component = typeof App;
 type Meta = ComponentMeta<Component>;
@@ -15,16 +15,8 @@ export const Ideal: Story = {};
 export const Monkey: Story = {
   decorators: [
     (Story) => {
-      const randomizer = new gremlins.Chance(new gremlins.Chance().random());
-      const horde = gremlins.createHorde({
-        randomizer,
-      });
-      console.log("random seed", randomizer.seed);
-      horde.unleash();
-      setTimeout(() => {
-        horde.stop();
-      }, 5000);
+      chaosFrontendToolkit.gremlins.start({ numberOfWaves: 100 });
       return <Story />;
-    },
+    }
   ],
 };
