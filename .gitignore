@@ -27,6 +27,4 @@ yarn-error.log*
 
 reports
 lighthouse-report.html
-/test-results/
-/playwright-report/
-/playwright/.cache/
+
