@@ -25,6 +25,7 @@
     "test:lighthouse": "lighthouse --output-path ./lighthouse-report.html https://silverbirder-react-todo-mvc.vercel.app",
     "storybook": "start-storybook -p 6006 -s public",
     "test:e2e": "cucumber-js",
+    "test:mem": "memlab run --scenario .memlab/scenario.js",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -77,6 +78,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "chaos-frontend-toolkit": "^1.0.0",
     "lighthouse": "^10.1.0",
+    "memlab": "^1.1.38",
     "playwright": "^1.32.3",
     "prop-types": "^15.8.1",
     "stryker-cli": "^1.0.2",
