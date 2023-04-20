@@ -13,6 +13,15 @@ const meta: Meta = {
 export default meta;
 
 export const Ideal: Story = {};
+
+export const AddTodoScenario: Story = {
+    play: async ({canvasElement}) => {
+        const canvas = within(canvasElement);
+        await userEvent.type(canvas.getByRole('textbox'), 'add todo');
+        await userEvent.keyboard("{enter}");
+    },
+}
+
 export const Monkey: Story = {
     decorators: [
         (Story) => {
@@ -22,8 +31,3 @@ export const Monkey: Story = {
     ],
 };
 
-export const InteractionScenario: Story = {
-    play: async ({canvasElement}) => {
-        const canvas = within(canvasElement);
-    },
-};

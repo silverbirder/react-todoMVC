@@ -1,19 +1,19 @@
 import {render, screen} from "@testing-library/react";
-import {App} from ".";
 import {composeStories} from '@storybook/testing-react';
 import * as stories from './App.stories';
 
-const {InteractionScenario} = composeStories(stories);
+const {AddTodoScenario} = composeStories(stories);
 
-test("renders todos text", () => {
-    render(<App/>);
-    const linkElement = screen.getByText(/todos/i);
-    expect(linkElement).toBeInTheDocument();
+describe('play AddTodoScenario', () => {
+    it("renders add todo", async () => {
+        // Arrange
+        const {container} = render(<AddTodoScenario/>);
+
+        // Act
+        await AddTodoScenario.play({canvasElement: container});
+
+        // Assert
+        const addTodoElement = screen.getByText(/add todo/i);
+        expect(addTodoElement).toBeInTheDocument();
+    })
 });
-
-test("play InteractionScenario", async () => {
-    const {container} = render(<InteractionScenario/>);
-    await InteractionScenario.play({canvasElement: container});
-    const linkElement = screen.getByText(/todos/i);
-    expect(linkElement).toBeInTheDocument();
-})

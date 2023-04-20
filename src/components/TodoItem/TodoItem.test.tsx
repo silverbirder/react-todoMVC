@@ -42,7 +42,7 @@ describe("TodoItem", () => {
         expect(mockToggle).toHaveBeenCalledWith(mockTodo.id);
     });
 
-    it("deletes a todo", () => {
+    it("deletes a todo", async () => {
         // Arrange
         render(
             <TodoContext.Provider value={{toggle: mockToggle, deleteTodo: mockDeleteTodo, addTodo: mockAdd}}>
