@@ -28,7 +28,7 @@ export const AddTwoTodosAndCheckOneScenario: Story = {
 export const Monkey: Story = {
     decorators: [
         (Story) => {
-            chaosFrontendToolkit.gremlins.start({numberOfWaves: 100});
+            chaosFrontendToolkit.gremlins.start();
             return <Story/>;
         }
     ],

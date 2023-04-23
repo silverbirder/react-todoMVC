@@ -17,7 +17,7 @@ export default class World extends ActorWorld {
 setWorldConstructor(World)
 
 Before(async function (this: World) {
-    browser = await chromium.launch({headless: false})
+    browser = await chromium.launch()
     const context = await browser.newContext();
     this.page = await context.newPage();
 })
