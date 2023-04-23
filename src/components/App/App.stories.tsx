@@ -14,11 +14,14 @@ export default meta;
 
 export const Ideal: Story = {};
 
-export const AddTodoScenario: Story = {
+export const AddTwoTodosAndCheckOneScenario: Story = {
     play: async ({canvasElement}) => {
         const canvas = within(canvasElement);
-        await userEvent.type(canvas.getByRole('textbox'), 'add todo');
-        await userEvent.keyboard("{enter}");
+        await userEvent.type(canvas.getByRole('textbox'), 'Write a blog post', {delay: 100});
+        await userEvent.keyboard("{enter}", {delay: 100});
+        await userEvent.type(canvas.getByRole('textbox'), 'Develop sample app', {delay: 100});
+        await userEvent.keyboard("{enter}", {delay: 100});
+        await userEvent.click(canvas.getAllByRole('checkbox')[1]);
     },
 }
 

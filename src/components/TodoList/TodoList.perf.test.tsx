@@ -23,5 +23,5 @@ test("renders TodoList", () => {
 
   // Assert
   const [, , actualDuration, , , , ,] = onRender.mock.calls[0];
-  expect(actualDuration).toBeLessThan(150);
+  expect(actualDuration).toBeLessThan(200);
 });

@@ -17,7 +17,7 @@ export const TodoItem: React.FC<Props> = ({ todo }) => {
           checked={todo.completed}
           onChange={() => toggle(todo.id)}
         />
-        <label>{todo.title}</label>
+        <label data-testid="todo-title">{todo.title}</label>
         <button className="destroy" onClick={() => deleteTodo(todo.id)} />
       </div>
     </li>

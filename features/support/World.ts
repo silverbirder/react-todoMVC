@@ -1,4 +1,4 @@
-import {setWorldConstructor, Before, After, defineParameterType} from '@cucumber/cucumber'
+import {setWorldConstructor, Before, After, defineParameterType, IWorldOptions} from '@cucumber/cucumber'
 import {ActorWorld, ActorParameterType} from '@cucumber/screenplay'
 import {chromium, Page, Browser} from "playwright";
 
@@ -8,6 +8,10 @@ defineParameterType({...ActorParameterType});
 
 export default class World extends ActorWorld {
     page!: Page;
+
+    constructor(props: IWorldOptions) {
+        super({...props, packageType: 'module'})
+    }
 }
 
 setWorldConstructor(World)

@@ -1,20 +1,31 @@
-import {When, Then} from '@cucumber/cucumber'
-import {Actor, eventually} from '@cucumber/screenplay'
-
+import {Given, When, Then} from '@cucumber/cucumber'
 import World from '../support/World'
-import {input, navigate, see} from "../support/tasks";
 import assert from "assert";
 
-When('{actor} accesses {string}', async function (actor: Actor<World>, to: string) {
-    await actor.attemptsTo(navigate({to}));
+Given('the Todo App is opened', async function (this: World) {
+    await this.page.goto('https://silverbirder-react-todo-mvc.vercel.app');
 })
 
-Then('{actor} sees {string}', async function (actor: Actor<World>, text: string) {
-    await eventually(async () => {
-        assert.ok(await actor.attemptsTo(see({text})));
-    })
+When('the user enters a new Todo and enter key', async function (this: World) {
+    const element = await this.page.getByPlaceholder('what you need to do?');
+    await element.type('new Todo');
+    await this.page.keyboard.down('Enter');
 })
 
-When('{actor} inputs {string} to input', async function (actor: Actor<World>, text: string) {
-    await actor.ask(input({text}));
+Then('the entered Todo is added to the list', async function (this: World) {
+    const elements = await this.page.getByText("new Todo");
+    const count = await elements.count();
+    assert(count === 1);
+})
+
+When('the user enters an empty Todo and clicks the Add button', async function (this: World) {
+    const element = await this.page.getByPlaceholder('what you need to do?');
+    await element.focus();
+    await this.page.keyboard.down('Enter');
+})
+
+Then('the Todo is not added to the list and an error message is displayed', async function (this: World) {
+    const elements = await this.page.getByText("new Todo");
+    const count = await elements.count();
+    assert(count === 0);
 })
