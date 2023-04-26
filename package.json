@@ -59,6 +59,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^9.1.0",
     "@cucumber/screenplay": "^5.2.0",
+    "@playwright/test": "^1.32.3",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
